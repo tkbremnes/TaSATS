@@ -13,17 +13,22 @@
 	</head>
 	
 	<body>
-		<div data-role="header">
-			<h1>Resultater</h1> 
-		</div>
-		<h3>Navn</h3>
-		<div id="resultatgraf" style="background-color:white; height:500px; width:100%;">
-			<h2>Placeholder for grafer</h2>
+		<div data-role="header" data-position="inline"> 
+			<h1>Post til Facebook</h1> 
 		</div>
 		
-		<div style="width:100%; text-align:center; bottom:1em;">
-			<a href="index.html" data-role="button" data-inline="true">OK</a>
-			<a href="facebook.html" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">Post til Facebook</a>
+		<div id="fbgraph" style="height:100px;width:100%;background-color:white;">
+			<h3>Placeholder</h3>
+		</div>
+		
+		<div>
+			<label for="fbcomment">Kommentar</label>
+			<input type="text" style="width:97%;" id="fbcomment"></input>
+		</div>
+		
+		<div data-role="controlgroup" data-type="horizontal">
+			<a href="fbposted.html" data-role="button" data-rel="dialog">Post</a>
+			<a href="#" data-rel="back" data-role="button">Avbryt</a>
 		</div>
 	</body>
 </html>
