@@ -8,6 +8,13 @@
 		<script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="jquery.mobile-1.0rc1.min.js"></script>
 				
+				
+		<script>
+			function calculateBMI(){
+				$('#bmi').text("BMI: " + Math.round(($('#slider-1').val()/(1.9*1.9))));
+			}
+		</script>
+		
 		<!-- CSS files -->
 		<link rel="stylesheet" type="text/css" href="jquery.mobile-1.0rc1.min.css" />
 	</head>
@@ -27,11 +34,11 @@
 			<tr>
 				<td>
 					<label for="slider-2">Vekt (kg): </label>
-					<input type="range" name="slider-2" id="slider-1" value="90" min="30" max="150" data-theme="b" data-track-theme="b" />
+					<input type="range" name="slider-2" id="slider-1" value="90" min="30" max="150" data-theme="b" data-track-theme="b" onchange="calculateBMI()"/>
 				</td>
 			</tr>
 			<tr>
-				<td>BMI: 24</td>
+				<td id="bmi">BMI: 24</td>
 			</tr>
 		</tr>
 		</table>
