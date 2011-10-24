@@ -8,17 +8,22 @@
 		<script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="jquery.mobile-1.0rc1.min.js"></script>
 		
+		<script>
+			function align(){
+				$('.ui-icon').css('top', '2.4em');
+			}
+		</script>
+		
 		<!-- CSS files -->
 		<link rel="stylesheet" type="text/css" href="jquery.mobile-1.0rc1.min.css" />
 	</head>
 	
-	<body>
-		<div data-role="header"> 
-			<a href="trenmedvenn.html" data-icon="arrow-l">Tilbake</a>
-			<h1>Scan apparat</h1> 
+	<body onload="align()">
+		<div data-role="header" data-position="inline"> 
+		<a href="index.html" data-icon="arrow-l">Tilbake</a>
+			<h1>Treningsprogram</h1> 
 		</div>
-		<center>
-			<a href="tredemolle.html"><img src="img/scan.png" /></a>
-		</center>
+		
+		<h1>Ikke implementert</h1>
 	</body>
 </html>
