@@ -10,6 +10,13 @@
 		<script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="jquery.mobile-1.0rc1.min.js"></script>
 		
+		
+		<script>
+			function changeDenomination(){
+				$('#dem').text($('#mal').val());
+			}
+		</script>
+		
 		<!-- CSS files -->
 		<link rel="stylesheet" type="text/css" href="jquery.mobile-1.0rc1.min.css" />
 	</head>
@@ -17,19 +24,19 @@
 	<body>
 		<div data-role="header"> 
 			<a href="scan.html" data-icon="arrow-l">Tilbake</a>
-			<h1>Tredemølle</h1> 
+			<h1>Tredem√∏lle</h1> 
 		</div>
 		
 		<form action="starttredemolle.html" method="post">
-			<label for="mal"><h3>Mål</h3></label>
-			<select name="mal" id="mal">
-				<option value="fri">Run Forest, run!</option>
-				<option value="distanse">Distanse</option>
-				<option value="tid">Tid</option>
-				<option value="kalorier">Kalorier</option>
+			<label for="mal"><h3>M√•l</h3></label>
+			<select name="mal" id="mal" onChange="changeDenomination()">
+				<option value="km">Run Forest, run!</option>
+				<option value="km">Distanse</option>
+				<option value="min">Tid</option>
+				<option value="kcal">Kalorier</option>
 				
 				
-				<input type="number" step="10" min="0" value="10"><span>km</span>
+				<input id="step" type="number" step="10" min="0" value="0"><span id="dem">km</span>
 			
 				<input type="submit" value="Start trening">
 		</form>
