@@ -223,5 +223,20 @@ function pause(){
 	ctx.fillStyle = '#F0F0F0';
 	ctx.fillRect(0,0,width,height);
 	
+	drawPauseSign();
+	
 	$('#pauseDialog').css('z-index', 99);
+	
+	$('#container').unbind();
+}
+
+function drawPauseSign(){
+	ctx.globalAlpha = 1.0;
+	ctx.fillStyle = '#FFFFFF';
+	ctx.strokestyle = '#000000';
+	ctx.lineWidth = 4;
+	ctx.fillRect((width/2)-25, 40, 20, 130);
+	ctx.fillRect((width/2)+15, 40, 20, 130);
+	ctx.strokeRect((width/2)-25, 40, 20, 130);
+	ctx.strokeRect((width/2)+15, 40, 20, 130);
 }
