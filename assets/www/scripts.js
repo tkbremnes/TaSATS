@@ -6,6 +6,10 @@ var noOfBubbles = 50;
 var bubbles = new Array(noOfBubbles);
 var timer;
 var timerTimer;
+var kcal;
+var dist;
+var forbrenning;
+var distanse;
 
 var seconds;
 var minutes;
@@ -18,6 +22,8 @@ var foamHeight;
 var emptyFlag;
 
 var countDownClock;
+
+var timerRefreshId;
 var refreshIntervalId;
 
 function hw(){
@@ -38,6 +44,11 @@ function init(){
 	ctx = canvas.getContext('2d');
 	ctx.fillStyle = '#000000';
 	ctx.fillRect(0,0,width,height);
+	
+	kcal = 0;
+	forbrenning = $('#kcal');
+	dist = 0;
+	distanse = $('#km');
 	
 	// Countdown timer
 	timer = $('#timerSeconds');
@@ -60,6 +71,9 @@ function initBeer(){
 	
 	initRetroBubbles();
 	
+	distanse.css('color', 'white');
+	forbrenning.css('color', 'white');
+	
 	refreshIntervalId = setInterval(draw, 40);
 	startTimer(100);
 	
@@ -68,11 +82,12 @@ function initBeer(){
 	
 	// Initiate the emptying of the glass
 	$('#container').click(function(){
-		$('#container').unbind();
-		emptyFlag = true;
-		$('#container').click(function(){
-			init();
-		});
+//		$('#container').unbind();
+//		emptyFlag = true;
+//		$('#container').click(function(){
+//			init();
+//		});
+		pause();
 	});
 }
 
@@ -161,8 +176,10 @@ function reset()
 
 
 
-
 function startTimer(ms){
+	kcal += 0.2;
+	dist += 0.5;
+	
 	if(timerTimer==10){
 		timerTimer=0;
 		seconds++;
@@ -171,9 +188,12 @@ function startTimer(ms){
 		seconds=0;
 		minutes++;
 	}
+	forbrenning.text(Math.round(kcal) + ' kcal');
+	distanse.text('0,' + Math.round(dist) + ' km');
+	
 	timer.text(addZero(minutes) + ':' + addZero(seconds) + ':' + timerTimer);
 	timerTimer+=1;
-	setTimeout('startTimer('+ms+')', ms);
+	timerRefreshId = setTimeout('startTimer('+ms+')', ms);
 }
 function addZero(num)
 {
@@ -193,4 +213,15 @@ function startCountDown(){
 		setTimeout('startCountDown()', 1000);
 		
 	}
+}
+
+function pause(){
+	clearInterval(timerRefreshId);
+	clearInterval(refreshIntervalId);
+	
+	ctx.globalAlpha = 0.8;
+	ctx.fillStyle = '#F0F0F0';
+	ctx.fillRect(0,0,width,height);
+	
+	$('#pauseDialog').css('z-index', 99);
 }

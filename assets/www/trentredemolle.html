@@ -21,17 +21,30 @@
 		
 		<div id="container">
 			<canvas id="cola"></canvas>
-			<div id="timer">
-				<p id="timerSeconds">0</p>
+			
+			<div id="textcontainer">
+				<div id="forbrenning">
+					<p id="kcal" style="float:left">0 kcal</p>
+				</div>
+				
+				<div id="timer">
+					<p id="timerSeconds" style="font-size:300%; color: white;">0</p>
+				</div>
+				
+				<div id="distanse">
+					<p id="km" style="font-size:300%;">0 km</p>
+				</div>
+				
 			</div>
 			
 		</div>
 		
-		</div>
 		
-		<!--
-		<input type="button" value="Drink up!" onclick="emptyGlass()" />
-		<input type="button" value="Reset" onclick="reset()" />
-		-->
+		<div id="pauseDialog">
+			<a href="#" data-role="button">Fortsett</a>
+			<a href="#" data-role="button">Endre</a>
+			<a href="resultater.html" data-role="button">Avbryt</a>
+		</div>
+
 	</body>
 </html>
