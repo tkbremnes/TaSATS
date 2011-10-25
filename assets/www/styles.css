@@ -1,0 +1,45 @@
+html{
+	
+}
+
+body{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#test{
+	position: absolute;
+	left: 180px;
+	top: 450px;
+}
+
+#cola{
+	width: 100%;
+	height: 100%;
+}
+
+#timer{
+	position: absolute;
+	top: 30%;
+	left:0;
+	width:100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#timer p{
+	color: white;
+	font-size: 500%;
+	font-family: monospace;
+}
+
+#container{
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
