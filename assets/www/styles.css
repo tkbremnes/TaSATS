@@ -53,9 +53,8 @@ body{
 
 #pauseDialog{
 	position: absolute;
-	top: 30%;
+	top: 40%;
 	left: 0;
 	width: 100%;
-	background-color: pink;
-	z-index: -1;
+	visibility: hidden;
 }

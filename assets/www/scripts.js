@@ -58,7 +58,7 @@ function init(){
 
 function initBeer(){
 	
-	foamHeight = height/3;
+	foamHeight = Math.round(height/10);
 	gradient = ctx.createLinearGradient(0, 0, 0, height-foamHeight);
 	gradient.addColorStop(0, '#111106');
 	gradient.addColorStop(1, '#000');
@@ -77,7 +77,7 @@ function initBeer(){
 	refreshIntervalId = setInterval(draw, 40);
 	startTimer(100);
 	
-	emptyFlag = false;
+	emptyFlag = true;
 	
 	
 	// Initiate the emptying of the glass
@@ -225,18 +225,19 @@ function pause(){
 	
 	drawPauseSign();
 	
-	$('#pauseDialog').css('z-index', 99);
+	$('#pauseDialog').css('visibility', 'visible');
 	
 	$('#container').unbind();
 }
 
 function drawPauseSign(){
+	var distanceFromTop = 55;
 	ctx.globalAlpha = 1.0;
 	ctx.fillStyle = '#FFFFFF';
 	ctx.strokestyle = '#000000';
 	ctx.lineWidth = 4;
-	ctx.fillRect((width/2)-25, 40, 20, 130);
-	ctx.fillRect((width/2)+15, 40, 20, 130);
-	ctx.strokeRect((width/2)-25, 40, 20, 130);
-	ctx.strokeRect((width/2)+15, 40, 20, 130);
+	ctx.fillRect((width/2)-25, distanceFromTop, 20, 130);
+	ctx.fillRect((width/2)+15, distanceFromTop, 20, 130);
+	ctx.strokeRect((width/2)-25, distanceFromTop, 20, 130);
+	ctx.strokeRect((width/2)+15, distanceFromTop, 20, 130);
 }
