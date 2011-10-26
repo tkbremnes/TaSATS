@@ -13,7 +13,11 @@
 		
 		<script>
 			function changeDenomination(){
-				$('#dem').text($('#mal').val());
+				if($('#mal2').val()=='hs'){
+					$('#velger').css('visibility', 'hidden');
+				}
+				$('#velger').css('visibility', 'visible');
+				$('#dem2').text($('#mal2').val());
 			}
 		</script>
 		
@@ -28,15 +32,19 @@
 		</div>
 		
 		<form action="starttredemolle.html" method="post">
-			<label for="mal"><h3>Mål</h3></label>
-			<select name="mal" id="mal" onChange="changeDenomination()">
-				<option value="km">Run Forest, run!</option>
+			
+			<label for="mal" style="float:left; margin-right:1em; margin-left:0.5em;"><h3>Mål</h3></label>
+			<select name="mal" id="mal2" onChange="changeDenomination()">
+				<option value="hs">Hurtigstart</option>
 				<option value="km">Distanse</option>
 				<option value="min">Tid</option>
 				<option value="kcal">Kalorier</option>
-				
-				
-				<input id="step" type="number" step="10" min="0" value="0"><span id="dem">km</span>
+			</select>
+			
+			
+			<div style="text-align:center;visibility:hidden;" id="velger">
+				<input id="step" type="number" step="10" min="0" value="0" style="width:30%; margin-right:1em; font-size:200%;"><span id="dem2">km</span>
+			</div>
 			
 				<a href="trentredemolle.html" data-role="button" rel="external">Start trening</a>
 		</form>

@@ -2,6 +2,7 @@ var canvas;
 var ctx;
 var gradient;
 var dy;
+var dyfloat;
 var noOfBubbles = 50;
 var bubbles = new Array(noOfBubbles);
 var timer;
@@ -62,8 +63,9 @@ function initBeer(){
 	gradient = ctx.createLinearGradient(0, 0, 0, height-foamHeight);
 	gradient.addColorStop(0, '#111106');
 	gradient.addColorStop(1, '#000');
-	dy=0;
 	
+	dy=0;
+	dyfloat = 0;
 	
 	timerTimer = 0;
 	seconds = 0;
@@ -114,7 +116,8 @@ function draw(){
 	
 	
 	if(emptyFlag){
-		dy++;
+		dyfloat += 0.1;
+		dy = Math.round(dyfloat);
 		// Checks if the beverage is empty
 		if(dy>=height){
 			clearInterval(refreshIntervalId);
