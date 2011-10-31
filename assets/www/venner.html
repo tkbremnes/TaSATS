@@ -8,11 +8,6 @@
 		<script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="jquery.mobile-1.0rc1.min.js"></script>
 		
-		<script>
-			function align(){
-//				$('.ui-icon').css('top', '2.4em');
-			}
-		</script>
 		
 		<!-- CSS files -->
 		<link rel="stylesheet" type="text/css" href="jquery.mobile-1.0rc1.min.css" />
@@ -21,43 +16,34 @@
 	<body onload="align()">
 		<div data-role="header" data-position="inline"> 
 		<a href="index.html" data-icon="arrow-l">Tilbake</a>
-			<h1>Tren med venn</h1> 
+			<h1>Venner</h1> 
 		</div> 
 	
 		<center>
 		<input type="search" name="search" id="searc-basic" value="" placeholder="Søk etter venn" />
 		</center>
-		<div data-role="fieldcontain">
-		<fieldset data-role="controlgroup" data-inset="true">
-			<label for="checkbox-1">
+		<ul data-role="listview" data-inset="true" data-divider-theme="e">
+			<li>
 				<h3 style="float:left; margin:1em;">Fredrik Olsen</h3>
 				<img src="img/fredrik.png" style="height:64px; float:right;"/>
-			</label>
-			<input type="checkbox" name="checkbox-1" id="checkbox-1">
+			</li>
 			
-			
-			<label for="checkbox-2">
+			<li>
 				<h3 style="float:left; margin:1em;">Petter Hansen</h3>
 				<img src="img/petter.png"  style="height:64px; float:right;"/>
-			</label>
-			<input type="checkbox" name="checkbox-2" id="checkbox-2">
+			</li>
 			
-			<label for="checkbox-3">
+			<li>
 				<h3 style="float:left; margin:1em;">Kari Dysvik</h3>
 				<img src="img/kari.png"  style="height:64px; float:right;"/>
-			</label>
-			<input type="checkbox" name="checkbox-3" id="checkbox-3">
+			</li>
 			
-			<label for="checkbox-4">
+			<li>
 				<h3 style="float:left; margin:1em;">Grethe Andresen</h3>
 				<img src="img/grethe.png"  style="height:64px; float:right;"/>
-			</label>
-			<input type="checkbox" name="checkbox-4" id="checkbox-4">
+			</li>
 			
-		</fieldset>
-		<div>
-		
-		<a href="velgtreningsform.html" data-role="button">Fortsett</a>
+		</ul>
 		
 		
 		

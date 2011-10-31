@@ -117,33 +117,26 @@ function draw(){
 	
 	
 	
-	
 	// PAUSE
 	ctx.fillStyle = '#FFFFFF';
-	ctx.fillRect(180,500,80,80);
+	ctx.fillRect(200,500,80,80);
 	ctx.strokeStyle = '#C0C0C0';
 	ctx.lineWidth = 5;
-	ctx.strokeRect(180,500,80,80);
+	ctx.strokeRect(200,500,80,80);
 	
 	ctx.fillStyle = '#000000';
-	ctx.fillRect(205,515,10,50);
 	ctx.fillRect(225,515,10,50);
-	
-	
-	
-	
-	
-	
+	ctx.fillRect(245,515,10,50);
 	
 	
 	
 	if(emptyFlag){
-		dyfloat += 0.1;
+		dyfloat += 1;
 		dy = Math.round(dyfloat);
 		// Checks if the beverage is empty
 		if(dy>=height){
 			clearInterval(refreshIntervalId);
-			document.location.href = "tredemolleresultater.html";
+			document.location.href = "ellipseresultater.html";
 		}
 	}	
 }
@@ -265,9 +258,4 @@ function drawPauseSign(){
 	ctx.fillRect(Math.round((width/2))+15, distanceFromTop, 20, 130);
 	ctx.strokeRect(Math.round((width/2))-25, distanceFromTop, 20, 130);
 	ctx.strokeRect(Math.round((width/2))+15, distanceFromTop, 20, 130);
-}
-
-function continueCountDown(){
-	$('#pauseDialog').css('visibility', 'hidden');
-	startCountDown();
 }

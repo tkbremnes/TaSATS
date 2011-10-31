@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-		<title>PhoneGap</title>
+		<title>Ta SATS</title>
 		
 		<!-- JavaScript files -->
 		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
@@ -12,6 +12,7 @@
 		<script>
 			function calculateBMI(){
 				$('#bmi').text("BMI: " + Math.round(($('#slider-1').val()/(1.9*1.9))));
+				$('#lagreknapp').css('visibility', 'visible');
 			}
 		</script>
 		
@@ -32,13 +33,14 @@
 				<td><b>Fredrik Olsen</b></td>
 			</tr>
 			<tr>
-				<td>
+				<td colspan="2">
 					<label for="slider-2">Vekt (kg): </label>
 					<input type="range" name="slider-2" id="slider-1" value="90" min="30" max="150" data-theme="b" data-track-theme="b" onchange="calculateBMI()"/>
 				</td>
 			</tr>
 			<tr>
 				<td id="bmi">BMI: 24</td>
+				<td><a href="index.html" data-role="button" style="visibility: hidden;" id="lagreknapp">Lagre</a>
 			</tr>
 		</tr>
 		</table>

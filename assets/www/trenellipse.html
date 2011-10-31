@@ -4,12 +4,12 @@
 	<head>
 		<meta charset=utf-8>
 		<link href="styles.css" rel="stylesheet">
-		<script type="text/javascript" src="scripts.js"></script>
+		<script type="text/javascript" src="ellipsescripts.js"></script>
 		
 		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 		<script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="jquery.mobile-1.0rc1.min.css" />
-		<title>Mead</title>
+		<title>Ta SATS</title>
 	</head>
 	
 	<body onload="init()">
@@ -21,13 +21,25 @@
 		
 		<div id="container">
 			<canvas id="cola"></canvas>
-			<div id="timer">
-				<p id="timerSeconds">0</p>
+			
+			<div id="textcontainer">
+				
+				<div id="timer">
+					<p id="timerSeconds" style="float:left; color: white;">0</p>
+				</div>
+				
+				<div id="forbrenning">
+					<p id="kcal" style="font-size:300%;">0 kcal</p>
+				</div>
+				
+				<div id="distanse">
+					<p id="km" style="font-size:300%;">0 km</p>
+				</div>
+				
 			</div>
 			
 		</div>
 		
-		</div>
 		
 		<!--
 		<input type="button" value="Drink up!" onclick="emptyGlass()" />

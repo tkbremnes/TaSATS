@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>PhoneGap</title>
+		<title>Ta SATS</title>
 		
 		<META http-equiv="Content-Type" content="text/html; charset=utf-8">
 		
@@ -16,8 +16,10 @@
 				if($('#mal2').val()=='hs'){
 					$('#velger').css('visibility', 'hidden');
 				}
-				$('#velger').css('visibility', 'visible');
-				$('#dem2').text($('#mal2').val());
+				else{
+					$('#velger').css('visibility', 'visible');
+					$('#dem2').text($('#mal2').val());
+				}
 			}
 		</script>
 		
@@ -28,12 +30,12 @@
 	<body>
 		<div data-role="header"> 
 			<a href="scan.html" data-icon="arrow-l">Tilbake</a>
-			<h1>TredemÃ¸lle</h1> 
+			<h1>Tredemølle</h1> 
 		</div>
 		
 		<form action="starttredemolle.html" method="post">
 			
-			<label for="mal" style="float:left; margin-right:1em; margin-left:0.5em;"><h3>MÃ¥l</h3></label>
+			<label for="mal" style="float:left; margin-right:1em; margin-left:0.5em;"><h3>Mål</h3></label>
 			<select name="mal" id="mal2" onChange="changeDenomination()">
 				<option value="hs">Hurtigstart</option>
 				<option value="km">Distanse</option>
